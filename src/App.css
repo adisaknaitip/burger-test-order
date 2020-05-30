@@ -7,7 +7,7 @@ p{
 #burger{
   display:flex;
   justify-content:flex-start;
-  width:120px;
+  
 }
 #banner{
   font-family: 'Pacifico', cursive;
@@ -54,9 +54,6 @@ p{
   background: #a36d07; 
 }
 @media only screen and (max-device-width: 400px){
-  #burger{
-    display: none;
-  }
   #scrollBurger{
     height: 250px;
   }

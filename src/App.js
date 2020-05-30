@@ -2,7 +2,6 @@ import React from "react";
 import { Component } from "react";
 import "./App.css";
 
-import { Link } from 'react-router-dom'
 
 
 
@@ -194,28 +193,31 @@ export default class App extends Component {
   // Function for order the burger
   orderButton() {
     if (this.state.totalPrice !== 2.00) {
-      const orderTemp = this.state.order;
-      orderTemp.push({
+      const orderList = this.state.order;
+      orderList.push({
         tomato: { ...this.state.tomato },
         salad: { ...this.state.salad },
         beef: { ...this.state.beef },
         bacon: { ...this.state.bacon },
       })
       this.setState((state) => ({
-        order: orderTemp
-      }));
-      console.log("1" + this.state.order)
+        order: orderList
+      })); this.props.getOrder({
+        tomato: { ...this.state.tomato },
+        salad: { ...this.state.salad },
+        beef: { ...this.state.beef },
+        bacon: { ...this.state.bacon },
+        totalPrice:this.state.totalPrice
+      })
     }
-  }
-  checkOut = () => {
-    return this.state.order;
-  }
+    console.log(this.state.order)
 
-
+  }
   render() {
     return (
       <div style={{ textAlign: "center" }}>
         {/* Burger */}
+
         <div style={{ height: "300px", overflowY: "scroll", margin: "2px" }}>
           <div>
             <img
@@ -351,10 +353,8 @@ export default class App extends Component {
           </div>
         </div>
         <button className="btn btn-lg btn-warning m-1" onClick={this.orderButton.bind(this)}> Order Now</button>
-        <Link to="/checkout" ><button className="btn btn-lg btn-danger m-1" onClick={this.checkOut.bind(this)}>
 
-          Check Out</button></Link>
-        
+
       </div >
     );
   }

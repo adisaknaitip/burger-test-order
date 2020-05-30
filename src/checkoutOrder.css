@@ -1,0 +1,7 @@
+.order div{
+    display: flex;
+    justify-content: center;
+}
+.order div p:first-child{
+    width: 85px;
+}
