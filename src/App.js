@@ -210,8 +210,6 @@ export default class App extends Component {
         totalPrice:this.state.totalPrice
       })
     }
-    console.log(this.state.order)
-
   }
   render() {
     return (
@@ -353,8 +351,6 @@ export default class App extends Component {
           </div>
         </div>
         <button className="btn btn-lg btn-warning m-1" onClick={this.orderButton.bind(this)}> Order Now</button>
-
-
       </div >
     );
   }

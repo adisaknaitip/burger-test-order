@@ -57,4 +57,12 @@ p{
   #scrollBurger{
     height: 250px;
   }
+  .border{
+    width: 100vw;
+  }
+}
+@media only screen and (min-width: 600px){
+  .border{
+    width: 30vw;
+  }
 }
